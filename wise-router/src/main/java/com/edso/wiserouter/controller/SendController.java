@@ -17,9 +17,10 @@ public class SendController {
 
     public void sendMessage(String msg) {
         template.opsForValue().set("a", msg);
-        System.out.println("Redis " + template.opsForValue().get("a"));
+        template.convertAndSend("order", msg);
+        System.out.println("Redis send message " + template.opsForValue().get("a"));
         kafkaTemplate.send("demo", msg);
-        System.out.println("Topic demo: send " + msg + "to kafka");
+        System.out.println("Topic demo: send " + msg + " to kafka");
     }
 
     @PostMapping
