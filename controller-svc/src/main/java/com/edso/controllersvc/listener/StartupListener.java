@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 public class StartupListener {
     @KafkaListener(topics = "demo1", groupId = "group-id")
     public void listen(String message) {
-        System.out.println("From controller svc Received Message in group - group-id: " + message);
+        System.out.println("Topic demo1: get " + message + "from kafka");
+
     }
 }

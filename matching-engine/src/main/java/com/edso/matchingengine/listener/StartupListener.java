@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 public class StartupListener{
     @KafkaListener(topics = "demo", groupId = "group-id")
     public void listen(String message) {
-        System.out.println("Received Message in group - group-id: " + message);
+        System.out.println("Topic demo: get " + message + "from kafka");
         sendMessage(message);
-        System.out.println("Send Message to topic demo1: " + message);
+        System.out.println("Topic demo1: send " + message + "to kafka");
     }
 
     @Autowired
