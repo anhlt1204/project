@@ -1,11 +1,13 @@
 package com.edso.snapshot;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 @Component
+@Slf4j
 public class StudentConsumer {
 
     public void handleMessage(Object msg) {
-        System.out.println("Message> " + msg.toString());
+        log.info("Message> " + msg.toString());
     }
 }
