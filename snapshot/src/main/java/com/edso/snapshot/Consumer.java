@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Slf4j
-public class StudentConsumer {
+public class Consumer {
 
     public void handleMessage(Object msg) {
         log.info("Message> " + msg.toString());
